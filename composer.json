@@ -1,0 +1,38 @@
+{
+    "name": "yaknet/rate-limiter",
+    "description": "A high-performance, zero-dependency, pure PHP rate limiting component supporting Token Bucket and Sliding Window algorithms.",
+    "keywords": ["rate-limiter", "rate-limit", "throttle", "token-bucket", "sliding-window", "security", "resilience", "yaknet"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "YakNet Bilişim",
+            "email": "info@yakhub.com.tr"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "YakNet\\RateLimiter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YakNet\\RateLimiter\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "analyze": "vendor/bin/phpstan analyze src --level 5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
