@@ -4,6 +4,7 @@ namespace YakNet\RateLimiter\Storage;
 
 class InMemoryStorage implements StorageInterface
 {
+    /** @var array<string, array{value: mixed, expires_at: int}> */
     private array $data = [];
 
     public function get(string $key): mixed

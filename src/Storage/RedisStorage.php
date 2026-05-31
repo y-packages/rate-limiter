@@ -4,7 +4,8 @@ namespace YakNet\RateLimiter\Storage;
 
 class RedisStorage implements StorageInterface
 {
-    private $redis;
+    /** @var object */
+    private object $redis;
 
     /**
      * @param object $redis An instance of \Redis (Phpredis) or \Predis\Client
