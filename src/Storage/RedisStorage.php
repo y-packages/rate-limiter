@@ -4,11 +4,11 @@ namespace YakNet\RateLimiter\Storage;
 
 class RedisStorage implements StorageInterface
 {
-    /** @var object */
+    /** @var \Redis */
     private object $redis;
 
     /**
-     * @param object $redis An instance of \Redis (Phpredis) or \Predis\Client
+     * @param \Redis $redis An instance of \Redis (Phpredis) or \Predis\Client
      */
     public function __construct(object $redis)
     {
@@ -18,7 +18,7 @@ class RedisStorage implements StorageInterface
     public function get(string $key): mixed
     {
         $value = $this->redis->get($key);
-        if ($value === false || $value === null) {
+        if (!is_string($value)) {
             return null;
         }
 
